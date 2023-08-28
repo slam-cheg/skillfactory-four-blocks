@@ -1,0 +1,248 @@
+@font-face {
+  font-family: "heliosexBOLD-neuemachina";
+  src: url("https://tools.skillfactory.ru/heliosext.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "heliosexBOLD-neuemachina";
+  src: url("https://tools.skillfactory.ru/HeliosExtC-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "heliosexBOLD-neuemachina";
+  src: url("https://tools.skillfactory.ru/PPNeueMachina-InktrapRegular.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+#allrecords a {
+  color: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "heliosexBOLD-neuemachina", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.inner-wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (max-width: 1199px) {
+  .inner-wrapper {
+    max-width: 940px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .inner-wrapper {
+    max-width: 620px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .inner-wrapper {
+    max-width: 460px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .inner-wrapper {
+    max-width: 300px;
+  }
+}
+
+.h2-title {
+  color: #181818;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 90%;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 1199px) {
+  .h2-title {
+    font-size: 55px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .h2-title {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .h2-title {
+    font-size: 40px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .h2-title {
+    font-size: 30px;
+    line-height: 28px;
+  }
+}
+
+.h3-title {
+  color: #043933;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+}
+@media screen and (max-width: 639px) {
+  .h3-title {
+    color: #ff6945;
+    font-size: 20px;
+  }
+}
+
+.h4-title {
+  color: #181818;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  max-width: 93%;
+}
+@media screen and (max-width: 639px) {
+  .h4-title {
+    font-size: 18px;
+    max-width: calc(90% - 32px);
+  }
+}
+
+.accord-outer {
+  border-radius: 8px;
+  background: #dde6e7;
+  padding: 30px 0;
+  transition: 0.5s;
+  max-height: initial;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 639px) {
+  .accord-outer {
+    padding: 20px 0;
+  }
+}
+.accord-outer .accord-button {
+  background: #043933;
+  border-radius: 4px;
+}
+
+.accord-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 30px;
+}
+@media screen and (max-width: 639px) {
+  .accord-header {
+    padding: 0 15px;
+  }
+}
+
+.accord-button {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accord-button svg {
+  transition: 0.2s;
+}
+
+.accord-inner .accord-button {
+  background: #a2c1c4;
+}
+
+.accord-inner__element {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #a2c1c4;
+}
+.accord-inner__element:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.accord-inner__body {
+  max-width: 86%;
+  padding: 0 30px;
+}
+@media screen and (max-width: 639px) {
+  .accord-inner__body {
+    padding: 0 15px;
+  }
+}
+.accord-inner__body ul {
+  list-style: none;
+  padding: 0;
+}
+.accord-inner__body p,
+.accord-inner__body ul,
+.accord-inner__body li {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(24, 24, 24, 0.7);
+}
+@media screen and (max-width: 639px) {
+  .accord-inner__body p,
+  .accord-inner__body ul,
+  .accord-inner__body li {
+    font-size: 14px;
+  }
+}
+
+.accord-opened .accord-outer__body,
+.accord-opened .accord-inner__body {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  max-height: initial;
+  transition: 0.2s;
+}
+.accord-opened .accord-inner__element:first-of-type .accord-header_inner {
+  padding-top: 60px;
+}
+.accord-opened .accord-inner__element .accord-header_inner {
+  padding-top: 20px;
+}
+@media screen and (max-width: 639px) {
+  .accord-opened .accord-inner__element .accord-header_inner {
+    padding-top: 20px;
+  }
+}
+.accord-opened .accord-inner__body {
+  padding-top: 23px;
+}
+@media screen and (max-width: 639px) {
+  .accord-opened .accord-inner__body {
+    padding-top: 20px;
+  }
+}
+.accord-opened .accord-inner svg {
+  transform: rotate(45deg);
+  transition: 0.2s;
+}
+
+.accord-closed .accord-outer__body,
+.accord-closed .accord-inner__body {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+  transition: 0s;
+  padding-top: 0;
+}
+.accord-closed .accord-button svg {
+  transform: rotate(180deg);
+  transition: 0.2s;
+}
