@@ -1,4 +1,6 @@
 const outerAccords = document.querySelectorAll(".accord-outer");
+const programAccord = document.querySelector(".program__accord-wrapper");
+const programAccordItems = programAccord.querySelectorAll(".accord-inner__element");
 
 outerAccords.forEach((accord) => {
 	const outerAccordElement = accord.querySelector(".accord-outer__element");
@@ -15,6 +17,13 @@ outerAccords.forEach((accord) => {
 				handlerAccordToggle(element);
 			});
 		});
+	});
+});
+
+programAccordItems.forEach((element) => {
+	const programAccordHeader = element.querySelector(".accord-header");
+	programAccordHeader.addEventListener("click", () => {
+		handlerAccordToggle(element);
 	});
 });
 
