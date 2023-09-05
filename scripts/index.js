@@ -31,3 +31,32 @@ function handlerAccordToggle(accord) {
 	accord.classList.toggle("accord-opened");
 	accord.classList.toggle("accord-closed");
 }
+
+const videosSwiper = new Swiper(".videos__swiper", {
+	loop: false,
+	navigation: {
+		nextEl: "#videos-prev-btn",
+		prevEl: "#videos-next-btn",
+	},
+	spaceBetween: 44,
+	slideToClickedSlide: false,
+	mousewheel: {
+		invert: false,
+	},
+	breakpoints: {
+		320: {
+			slidesPerView: 1.2,
+			spaceBetween: 20,
+		},
+		480: {
+			slidesPerView: 1.8,
+		},
+		640: {
+			slidesPerView: 2.4,
+			spaceBetween: 40,
+		},
+		960: {
+			slidesPerView: 4,
+		},
+	},
+});

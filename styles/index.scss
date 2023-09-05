@@ -257,6 +257,8 @@
 }
 
 .program {
+	margin-bottom: 100px;
+
 	.h2-title {
 		max-width: 540px;
 		margin-bottom: 60px;
@@ -527,7 +529,7 @@
 		font-size: 12px;
 	}
 
-	@media screen and (max-width: 479px) {	
+	@media screen and (max-width: 479px) {
 		max-width: 160px;
 	}
 }
@@ -613,5 +615,229 @@
 		order: 1;
 		margin-bottom: 30px;
 		padding: 15px 20px;
+	}
+}
+
+.pagination {
+	&__buttons {
+		position: absolute;
+		z-index: 2;
+		right: 0;
+		top: 62px;
+		display: flex;
+		gap: 10px;
+
+		@media screen and (max-width: 639px) {
+			top: 120px;
+		}
+
+		@media screen and (max-width: 479px) {
+			right: unset;
+			left: 0;
+		}
+	}
+
+	&__button {
+		width: 40px;
+		height: 40px;
+		background-image: url(https://static.tildacdn.com/tild6430-6532-4461-b164-346166623365/f0ac3312-51d0-4886-8.svg);
+		background-size: 14px;
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 50px;
+		background-color: #dde5e6;
+		transition: 0.2s;
+		cursor: pointer;
+
+		&:hover {
+			transition: 0.2s;
+			opacity: 0.7;
+			background-color: #033932;
+		}
+
+		@media screen and (max-width: 959px) {
+			width: 30px;
+			height: 30px;
+		}
+	}
+	&__button_next {
+		transform: rotate(180deg);
+	}
+}
+
+.videos {
+	background: #fffaed;
+	overflow: hidden;
+	margin-bottom: 110px;
+	padding-bottom: 120px;
+
+	@media screen and (max-width: 639px) {
+		padding-bottom: 42px;
+	}
+
+	.h2-title {
+		margin-top: 120px;
+		margin-bottom: 20px;
+		font-size: 48px;
+
+		@media screen and (max-width: 639px) {
+			margin-top: 48px;
+			font-size: 32px;
+		}
+
+		@media screen and (max-width: 479px) {
+			max-width: 80%;
+		}
+	}
+
+	&__subtitle {
+		color: #181818;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		margin-bottom: 80px;
+
+		@media screen and (max-width: 639px) {
+			margin-bottom: 25px;
+			font-size: 14px;
+		}
+
+		@media screen and (max-width: 479px) {
+			max-width: 63%;
+		}
+	}
+
+	// &__swiper {
+	// 	padding-top: 100px;
+
+	// 	@media screen and (max-width: 959px) {
+	// 		padding-top: 70px;
+	// 	}
+	// }
+
+	.pagination__buttons {
+		top: 46px;
+
+		@media screen and (max-width: 959px) {
+			top: 105px;
+		}
+
+		@media screen and (max-width: 479px) {
+			top: 105px;
+			right: 0;
+			left: unset;
+		}
+	}
+
+	&__slide {
+		position: relative;
+	}
+
+	&__iframe-wrapper {
+		position: relative;
+		width: 100%;
+		height: 420px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 30px;
+
+		@media screen and (max-width: 1199px) {
+			height: 370px;
+		}
+
+		@media screen and (max-width: 639px) {
+			height: 420px;
+		}
+	}
+
+	&__play {
+		position: absolute;
+		z-index: 3;
+		border: none;
+		background: none;
+		outline: none;
+		cursor: pointer;
+		transition: 0.2s;
+
+		&:hover {
+			transition: 0.2s;
+			opacity: 0.7;
+		}
+	}
+
+	&__play_hidden {
+		opacity: 0;
+		transition: 0.2s;
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	&__preview {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		pointer-events: none;
+		opacity: 1;
+		transition: 0.2s;
+	}
+
+	&__preview_hidden {
+		opacity: 0;
+		transition: 0.2s;
+	}
+
+	&__iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	&__name {
+		color: #000000 !important;
+		font-size: 20px;
+		margin-bottom: 12px;
+		text-decoration: none !important;
+
+		@media screen and (max-width: 639px) {
+			font-size: 18px;
+		}
+	}
+
+	&__description {
+		color: #181818;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		opacity: 0.7;
+		margin-bottom: 40px;
+	}
+
+	&__popup-button {
+		color: #181818;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding-bottom: 2px;
+		border-bottom: 1px solid #181818;
+		transition: 0.2s;
+
+		&:hover {
+			transition: 0.2s;
+			opacity: 0.7;
+		}
 	}
 }
