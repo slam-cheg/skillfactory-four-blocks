@@ -877,6 +877,11 @@
     transition: 0.2s;
     cursor: pointer;
 
+    @media screen and (max-width: 639px) {
+      top: 0;
+      right: 0;
+    }
+
     &:hover {
       transition: 0.2s;
       background: rgba(4, 57, 51, 0.3);
