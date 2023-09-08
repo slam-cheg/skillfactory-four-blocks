@@ -186,8 +186,12 @@
 }
 
 .accord-inner .accord-button {
-  background: #a2c1c4;
+  background: rgba(162, 193, 196, 0.3);
   border-radius: 4px;
+}
+.accord-inner .accord-button:hover {
+  background: rgba(162, 193, 196, 0.7);
+  transition: 0.2s;
 }
 
 .accord-inner__element {
@@ -680,7 +684,7 @@
 .pagination__button:hover {
   transition: 0.2s;
   opacity: 0.7;
-  background-color: #033932;
+  background-color: #043933;
 }
 @media screen and (max-width: 959px) {
   .pagination__button {
@@ -989,7 +993,7 @@
   margin-bottom: 10px;
 }
 .learning__tabs .swiper-slide-thumb-active {
-  background: #bad2d8;
+  background: rgba(186, 210, 216, 0.7);
   transition: 0.2s;
 }
 .learning__tab {
@@ -999,6 +1003,7 @@
   gap: 10px;
   transition: 0.2s;
   cursor: pointer;
+  border-right: 1px solid rgba(186, 210, 216, 0.7);
 }
 .learning__tab-title {
   color: #181818;
@@ -1089,6 +1094,7 @@
 .learning__community-col img {
   position: absolute;
   bottom: -40px;
+  border-radius: 4px 4px 0 0;
 }
 .learning__community-title {
   color: #181818;
@@ -1111,6 +1117,10 @@
 }
 .learning__community-list-item {
   display: flex;
+  color: #181818;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
 }
 .learning__community-list-item::before {
   content: "→";
