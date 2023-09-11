@@ -1340,6 +1340,7 @@
 
 .takeit {
   margin-bottom: 100px;
+  overflow: hidden;
 }
 .takeit .h2-title {
   margin-bottom: 60px;
@@ -1367,9 +1368,6 @@
   max-width: 310px;
 }
 .takeit__rates {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
   margin-bottom: 20px;
 }
 .takeit__benefits {
@@ -1395,6 +1393,8 @@
   font-size: 18px;
   font-weight: 800;
   line-height: 120%;
+  position: relative;
+  top: -2px;
 }
 @media screen and (max-width: 639px) {
   .takeit__benefits-item::before {
@@ -1445,7 +1445,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.rate-card:nth-of-type(2) {
+.rate-card_lime {
   background: #b5e916;
 }
 .rate-card__description {
@@ -1462,11 +1462,10 @@
   gap: 14px;
 }
 .rate-card__list-item {
-  color: #181818;
+  color: rgba(24, 24, 24, 0.7);
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
-  opacity: 0.7;
 }
 .rate-card__list-item-label {
   color: #181818;
@@ -1477,7 +1476,7 @@
   text-transform: uppercase;
   border-radius: 3px;
   background: #b5e916;
-  padding: 10px 20px;
+  padding: 11px 20px 10px 20px;
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 8px;
@@ -1494,14 +1493,14 @@
   text-transform: uppercase;
   border-radius: 3px;
   background: #ff6945;
-  padding: 7px;
+  padding: 8px 7px 7px 7px;
   margin-bottom: 20px;
 }
 .rate-card__old-price {
   color: rgb(24, 24, 24);
   opacity: 0.6;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 120%;
   text-decoration: line-through;
   margin-bottom: 10px;
@@ -1509,7 +1508,7 @@
 .rate-card__new-price {
   color: #181818;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 800;
   line-height: 100%;
 }
 .rate-card__price-description {
@@ -1533,6 +1532,9 @@
   padding-block: 20px;
   transition: 0.2s;
   cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
 }
 .rate-card__button:hover {
   transition: 0.2s;

@@ -146,13 +146,6 @@ function clearPopup() {
 	reviewPopupDescription.textContent = "####";
 }
 
-// document.querySelector(".tabs-button-next").addEventListener("click", () => {
-// 	learningVideos.slideNext();
-// });
-// document.querySelector(".tabs-button-prev").addEventListener("click", () => {
-// 	learningVideos.slidePrev();
-// });
-
 if (window.innerWidth < 960) {
 	const thumbsSlider = new Swiper(".learning__tabs", {
 		loop: false,
@@ -254,3 +247,23 @@ function getTimeRemaining(endtime) {
 		seconds: seconds,
 	};
 }
+
+const ratesSlider = new Swiper(".takeit__slider", {
+	loop: false,
+	navigation: {
+		nextEl: ".rates-button-next",
+		prevEl: ".rates-button-prev",
+	},
+	spaceBetween: 25,
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+		},
+		960: {
+			slidesPerView: 2,
+		},
+		1199: {
+			slidesPerView: 3,
+		},
+	},
+});
