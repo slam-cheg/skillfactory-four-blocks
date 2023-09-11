@@ -907,12 +907,6 @@
   transition: 0.2s;
   background: rgba(4, 57, 51, 0.3);
 }
-.popup-review_opened {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transition: 0.1s;
-}
 .popup-review__wrapper {
   position: relative;
   background-color: #fffaed;
@@ -1358,6 +1352,7 @@
   background: #06433c;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-radius: 8px;
   margin-bottom: 20px;
   padding: 16px 30px;
@@ -1477,6 +1472,136 @@
     top: 0;
   }
 }
+.takeit__popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s;
+  visibility: hidden;
+  opacity: 1;
+  pointer-events: auto;
+}
+.takeit__popup-wrapper {
+  position: relative;
+  width: 360px;
+  border-radius: 8px;
+  background: #fffaed;
+  margin: auto;
+  padding: 30px 20px 0 20px;
+  overflow: hidden;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-wrapper {
+    max-width: 300px;
+    padding: 30px 15px 0 15px;
+  }
+}
+.takeit__popup-close {
+  border-radius: 4px;
+  background: rgba(162, 193, 196, 0.3);
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-close {
+    top: 0;
+    right: 0;
+  }
+}
+.takeit__popup-close:hover {
+  transition: 0.2s;
+  background: rgba(4, 57, 51, 0.3);
+}
+.takeit__popup .h5-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  max-width: 80%;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup .h5-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+}
+.takeit__popup-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-list {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+}
+.takeit__popup-list-item {
+  color: #181818;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  display: flex;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-list-item {
+    font-size: 14px;
+  }
+}
+.takeit__popup-list-item::before {
+  content: "→";
+  margin-right: 20px;
+  color: #181818;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 120%;
+  position: relative;
+  top: -2px;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-list-item::before {
+    font-size: 16px;
+    line-height: 1;
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-list-item::before {
+    top: 0;
+  }
+}
+.takeit__popup-description {
+  color: #181818;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 639px) {
+  .takeit__popup-description {
+    font-size: 14px;
+  }
+}
+.takeit__popup-img {
+  max-width: 100%;
+  margin-bottom: -4px;
+}
 
 .timer {
   display: none;
@@ -1499,6 +1624,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 2px;
 }
 .takeit-timer__separator {
   font-size: 32px;
@@ -1584,6 +1711,7 @@
 }
 .rate-card__list-item_underline {
   text-decoration: underline;
+  cursor: pointer;
 }
 .rate-card__list-item-label {
   color: #181818;
@@ -1683,4 +1811,11 @@
   .rate-card__button {
     font-size: 18px;
   }
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.1s;
 }

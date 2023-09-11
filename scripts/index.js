@@ -18,8 +18,12 @@ const timerHoursValue = timer.querySelector(".takeit-timer__hours-value");
 const timerMinutesValue = timer.querySelector(".takeit-timer__minutes-value");
 const timerSecondsValue = timer.querySelector(".takeit-timer__seconds-value");
 let endtime = 0;
+const ratesPopupLinks = document.querySelectorAll(".rate-card__list-item_underline");
+const ratesPopups = document.querySelectorAll(".takeit__popup");
 
-reviewPopupCloseButton.addEventListener("click", closePopup);
+reviewPopupCloseButton.addEventListener("click", () => {
+	closePopup(reviewPopup);
+});
 
 outerAccords.forEach((accord) => {
 	const outerAccordElement = accord.querySelector(".accord-outer__element");
@@ -67,7 +71,22 @@ reviews.forEach((slide) => {
 	const subtitleText = reviewButton.dataset.course;
 
 	reviewButton.addEventListener("click", () => {
-		openPopup(nameText, subtitleText, descriptionText);
+		fullingPopup(nameText, subtitleText, descriptionText);
+		openPopup(reviewPopup);
+	});
+});
+
+ratesPopupLinks.forEach((link) => {
+	link.addEventListener("click", () => {
+		ratesPopups.forEach((popup) => {
+			if (popup.id === link.id) {
+				openPopup(popup);
+				const closeIco = popup.querySelector(".takeit__popup-close");
+				closeIco.addEventListener("click", () => {
+					closePopup(popup);
+				});
+			}
+		});
 	});
 });
 
@@ -112,38 +131,36 @@ const videosSwiper = new Swiper(".videos__swiper", {
 	},
 });
 
-function openPopup(name, subtitle, description) {
-	reviewPopupName.textContent = name;
-	reviewPopupSubtitle.textContent = subtitle;
-	reviewPopupDescription.textContent = description;
-	reviewPopup.classList.add("popup-review_opened");
-
-	reviewPopup.addEventListener("click", handleOverlayClick);
+function openPopup(currentPopup) {
+	currentPopup.classList.add("popup_opened");
+	currentPopup.addEventListener("click", handleOverlayClick);
 	window.addEventListener("keydown", closeByEscape);
 }
 
-function closePopup() {
-	reviewPopup.classList.remove("popup-review_opened");
-	setTimeout(clearPopup, 300);
+function closePopup(currentPopup) {
+	currentPopup.classList.remove("popup_opened");
 	window.removeEventListener("keydown", closeByEscape);
 }
 
 function handleOverlayClick(event) {
-	if (event.target !== reviewPopupWrapper) {
-		closePopup();
+	if (event.type === "click") {
+		if (event.target === event.currentTarget) {
+			closePopup(event.target);
+		}
 	}
 }
 
 function closeByEscape(event) {
 	if (event.key === "Escape") {
-		closePopup();
+		const openedPopUp = document.querySelector(".popup_opened");
+		closePopup(openedPopUp);
 	}
 }
 
-function clearPopup() {
-	reviewPopupName.textContent = "####";
-	reviewPopupSubtitle.textContent = "####";
-	reviewPopupDescription.textContent = "####";
+function fullingPopup(name, subtitle, description) {
+	reviewPopupName.textContent = name;
+	reviewPopupSubtitle.textContent = subtitle;
+	reviewPopupDescription.textContent = description;
 }
 
 if (window.innerWidth < 960) {
