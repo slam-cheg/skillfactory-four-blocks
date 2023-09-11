@@ -251,8 +251,8 @@ function getTimeRemaining(endtime) {
 const ratesSlider = new Swiper(".takeit__slider", {
 	loop: false,
 	navigation: {
-		nextEl: ".rates-button-next",
-		prevEl: ".rates-button-prev",
+		nextEl: "#rates-prev-btn",
+		prevEl: "#rates-next-btn",
 	},
 	spaceBetween: 25,
 	breakpoints: {

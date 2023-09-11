@@ -1340,10 +1340,15 @@
 
 .takeit {
   margin-bottom: 100px;
-  overflow: hidden;
 }
 .takeit .h2-title {
   margin-bottom: 60px;
+}
+@media screen and (max-width: 639px) {
+  .takeit .h2-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 }
 .takeit .h3-title {
   color: #181818;
@@ -1357,6 +1362,17 @@
   margin-bottom: 20px;
   padding: 16px 30px;
 }
+@media screen and (max-width: 959px) {
+  .takeit__sale {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .takeit__sale {
+    padding: 20px 15px;
+  }
+}
 .takeit__sale-col {
   display: flex;
 }
@@ -1367,8 +1383,44 @@
   line-height: 120%;
   max-width: 310px;
 }
+@media screen and (max-width: 639px) {
+  .takeit__sale-title {
+    font-size: 20px;
+    max-width: 260px;
+    line-height: 110%;
+  }
+}
 .takeit__rates {
   margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.takeit__rates .pagination__buttons {
+  display: none;
+  top: 20px;
+  right: 15px;
+  left: unset;
+}
+@media screen and (max-width: 959px) {
+  .takeit__rates .pagination__buttons {
+    display: flex;
+  }
+}
+.takeit__rates .pagination__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+.takeit__rates .pagination__button_next {
+  background: #043933;
+}
+.takeit__rates .pagination__button_next svg {
+  transform: rotate(180deg);
+}
+.takeit__rates .pagination__button_prev {
+  background: #a2c1c4;
 }
 .takeit__benefits {
   border-radius: 8px;
@@ -1377,7 +1429,20 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   list-style: none;
-  gap: 58px;
+  -moz-column-gap: 58px;
+       column-gap: 58px;
+}
+@media screen and (max-width: 1199px) {
+  .takeit__benefits {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .takeit__benefits {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
 }
 .takeit__benefits-item {
   color: #181818;
@@ -1385,6 +1450,11 @@
   font-weight: 400;
   line-height: 130%;
   display: flex;
+}
+@media screen and (max-width: 639px) {
+  .takeit__benefits-item {
+    font-size: 14px;
+  }
 }
 .takeit__benefits-item::before {
   content: "→";
@@ -1402,6 +1472,11 @@
     line-height: 1;
   }
 }
+@media screen and (max-width: 639px) {
+  .takeit__benefits-item::before {
+    top: 0;
+  }
+}
 
 .timer {
   display: none;
@@ -1410,9 +1485,14 @@
 
 .takeit-timer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 18px;
   color: #fff;
+}
+@media screen and (max-width: 639px) {
+  .takeit-timer {
+    gap: 7px;
+  }
 }
 .takeit-timer__col {
   display: flex;
@@ -1425,10 +1505,22 @@
   font-weight: 400;
   line-height: 110%;
 }
+@media screen and (max-width: 639px) {
+  .takeit-timer__separator {
+    font-size: 20px;
+    position: relative;
+    top: -4px;
+  }
+}
 .takeit-timer__num {
   font-size: 32px;
   font-weight: 800;
   line-height: 100%;
+}
+@media screen and (max-width: 639px) {
+  .takeit-timer__num {
+    font-size: 20px;
+  }
 }
 .takeit-timer__name {
   font-size: 14px;
@@ -1445,6 +1537,13 @@
   flex-direction: column;
   justify-content: space-between;
 }
+@media screen and (max-width: 639px) {
+  .rate-card {
+    padding: 20px 15px;
+    min-height: 610px;
+    gap: 35px;
+  }
+}
 .rate-card_lime {
   background: #b5e916;
 }
@@ -1455,17 +1554,36 @@
   line-height: 130%;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 639px) {
+  .rate-card__description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
 .rate-card__list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
+@media screen and (max-width: 639px) {
+  .rate-card__list {
+    gap: 12px;
+  }
+}
 .rate-card__list-item {
   color: rgba(24, 24, 24, 0.7);
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
+}
+@media screen and (max-width: 639px) {
+  .rate-card__list-item {
+    font-size: 14px;
+  }
+}
+.rate-card__list-item_underline {
+  text-decoration: underline;
 }
 .rate-card__list-item-label {
   color: #181818;
@@ -1480,6 +1598,11 @@
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 8px;
+}
+@media screen and (max-width: 639px) {
+  .rate-card__list-item-label {
+    display: none;
+  }
 }
 .rate-card__sale {
   display: flex;
@@ -1505,11 +1628,21 @@
   text-decoration: line-through;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 639px) {
+  .rate-card__old-price {
+    font-size: 14px;
+  }
+}
 .rate-card__new-price {
   color: #181818;
   font-size: 32px;
   font-weight: 800;
   line-height: 100%;
+}
+@media screen and (max-width: 639px) {
+  .rate-card__new-price {
+    font-size: 20px;
+  }
 }
 .rate-card__price-description {
   color: #181818;
@@ -1517,6 +1650,12 @@
   font-weight: 400;
   line-height: 130%;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 639px) {
+  .rate-card__price-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
 }
 .rate-card__button {
   display: flex;
@@ -1534,9 +1673,14 @@
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 .rate-card__button:hover {
   transition: 0.2s;
   background: #06433c;
+}
+@media screen and (max-width: 639px) {
+  .rate-card__button {
+    font-size: 18px;
+  }
 }

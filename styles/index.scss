@@ -712,14 +712,6 @@
 		}
 	}
 
-	// &__swiper {
-	// 	padding-top: 100px;
-
-	// 	@media screen and (max-width: 959px) {
-	// 		padding-top: 70px;
-	// 	}
-	// }
-
 	.pagination__buttons {
 		top: 46px;
 
@@ -1320,10 +1312,14 @@
 
 .takeit {
 	margin-bottom: 100px;
-	overflow: hidden;
 
 	.h2-title {
 		margin-bottom: 60px;
+
+		@media screen and (max-width: 639px) {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
 	}
 
 	.h3-title {
@@ -1338,10 +1334,22 @@
 		border-radius: 8px;
 		margin-bottom: 20px;
 		padding: 16px 30px;
+
+		@media screen and (max-width: 959px) {
+			flex-direction: column;
+			gap: 14px;
+		}
+
+		@media screen and (max-width: 639px) {
+			padding: 20px 15px;
+		}
 	}
 
 	&__sale-col {
 		display: flex;
+
+		@media screen and (max-width: 639px) {
+		}
 	}
 
 	&__sale-title {
@@ -1350,10 +1358,45 @@
 		font-weight: 400;
 		line-height: 120%;
 		max-width: 310px;
+
+		@media screen and (max-width: 639px) {
+			font-size: 20px;
+			max-width: 260px;
+			line-height: 110%;
+		}
 	}
 
 	&__rates {
 		margin-bottom: 20px;
+		position: relative;
+		overflow: hidden;
+
+		.pagination__buttons {
+			display: none;
+			top: 20px;
+			right: 15px;
+			left: unset;
+
+			@media screen and (max-width: 959px) {
+				display: flex;
+			}
+		}
+		.pagination__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 28px;
+			height: 28px;
+		}
+		.pagination__button_next {
+			background: #043933;
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+		.pagination__button_prev {
+			background: #a2c1c4;
+		}
 	}
 
 	&__benefits {
@@ -1363,7 +1406,17 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		list-style: none;
-		gap: 58px;
+		column-gap: 58px;
+
+		@media screen and (max-width: 1199px) {
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: 20px;
+		}
+
+		@media screen and (max-width: 639px) {
+			grid-template-columns: 1fr;
+			row-gap: 10px;
+		}
 	}
 
 	&__benefits-item {
@@ -1372,6 +1425,10 @@
 		font-weight: 400;
 		line-height: 130%;
 		display: flex;
+
+		@media screen and (max-width: 639px) {
+			font-size: 14px;
+		}
 
 		&::before {
 			content: "→";
@@ -1387,6 +1444,10 @@
 				font-size: 18px;
 				line-height: 1;
 			}
+
+			@media screen and (max-width: 639px) {
+				top: 0;
+			}
 		}
 	}
 }
@@ -1398,9 +1459,13 @@
 
 .takeit-timer {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 18px;
 	color: #fff;
+
+	@media screen and (max-width: 639px) {
+		gap: 7px;
+	}
 
 	&__col {
 		display: flex;
@@ -1413,12 +1478,22 @@
 		font-size: 32px;
 		font-weight: 400;
 		line-height: 110%;
+
+		@media screen and (max-width: 639px) {
+			font-size: 20px;
+			position: relative;
+			top: -4px;
+		}
 	}
 
 	&__num {
 		font-size: 32px;
 		font-weight: 800;
 		line-height: 100%;
+
+		@media screen and (max-width: 639px) {
+			font-size: 20px;
+		}
 	}
 
 	&__name {
@@ -1437,6 +1512,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 
+	@media screen and (max-width: 639px) {
+		padding: 20px 15px;
+		min-height: 610px;
+		gap: 35px;
+	}
+
 	&_lime {
 		background: #b5e916;
 	}
@@ -1447,6 +1528,11 @@
 		font-weight: 400;
 		line-height: 130%;
 		margin-bottom: 30px;
+
+		@media screen and (max-width: 639px) {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__list {
@@ -1454,6 +1540,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 14px;
+
+		@media screen and (max-width: 639px) {
+			gap: 12px;
+		}
 	}
 
 	&__list-item {
@@ -1461,6 +1551,14 @@
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 130%;
+
+		@media screen and (max-width: 639px) {
+			font-size: 14px;
+		}
+
+		&_underline {
+			text-decoration: underline;
+		}
 	}
 
 	&__list-item-label {
@@ -1475,6 +1573,10 @@
 		padding: 11px 20px 10px 20px;
 		width: fit-content;
 		margin-top: 8px;
+
+		@media screen and (max-width: 639px) {
+			display: none;
+		}
 	}
 
 	&__sale {
@@ -1500,6 +1602,10 @@
 		line-height: 120%;
 		text-decoration: line-through;
 		margin-bottom: 10px;
+
+		@media screen and (max-width: 639px) {
+			font-size: 14px;
+		}
 	}
 
 	&__new-price {
@@ -1507,6 +1613,10 @@
 		font-size: 32px;
 		font-weight: 800;
 		line-height: 100%;
+
+		@media screen and (max-width: 639px) {
+			font-size: 20px;
+		}
 	}
 
 	&__price-description {
@@ -1515,6 +1625,11 @@
 		font-weight: 400;
 		line-height: 130%;
 		margin-bottom: 20px;
+
+		@media screen and (max-width: 639px) {
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
 	}
 
 	&__button {
@@ -1533,11 +1648,15 @@
 		cursor: pointer;
 		border: none;
 		outline: none;
-		border-radius: 5px;
+		border-radius: 6px;
 
 		&:hover {
 			transition: 0.2s;
 			background: #06433c;
+		}
+
+		@media screen and (max-width: 639px) {
+			font-size: 18px;
 		}
 	}
 }
