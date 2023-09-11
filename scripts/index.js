@@ -11,6 +11,13 @@ const reviewPopupName = reviewPopup.querySelector(".popup-review__title");
 const reviewPopupSubtitle = reviewPopup.querySelector(".popup-review__subtitle");
 const reviewPopupDescription = reviewPopup.querySelector(".popup-review__description");
 const reviewPopupCloseButton = reviewPopup.querySelector(".popup-review__close-ico");
+const timerEndTime = document.querySelector(".timer");
+const timer = document.querySelector(".takeit-timer");
+const timerDaysValue = timer.querySelector(".takeit-timer__days-value");
+const timerHoursValue = timer.querySelector(".takeit-timer__hours-value");
+const timerMinutesValue = timer.querySelector(".takeit-timer__minutes-value");
+const timerSecondsValue = timer.querySelector(".takeit-timer__seconds-value");
+let endtime = 0;
 
 reviewPopupCloseButton.addEventListener("click", closePopup);
 
@@ -206,4 +213,44 @@ if (window.innerWidth < 960) {
 			swiper: thumbsSlider,
 		},
 	});
+}
+
+setTimeout(() => {
+	endtime = timerEndTime.textContent;
+}, 500);
+
+function updateClock() {
+	var t = getTimeRemaining(endtime);
+
+	if (t.days < 10) {
+		t.days = ("0" + t.days).slice(-2);
+	}
+	t.hours = ("0" + t.hours).slice(-2);
+	t.minutes = ("0" + t.minutes).slice(-2);
+	t.seconds = ("0" + t.seconds).slice(-2);
+	if (t.total <= 0) {
+		clearInterval(timerinterval);
+	}
+	timerDaysValue.textContent = t.days;
+	timerHoursValue.textContent = t.hours;
+	timerMinutesValue.textContent = t.minutes;
+	timerSecondsValue.textContent = t.seconds;
+}
+updateClock();
+var timerinterval = setInterval(updateClock, 1000);
+
+function getTimeRemaining(endtime) {
+	const t = Date.parse(endtime) - Date.parse(new Date());
+	const seconds = t < 0 ? 0 : Math.floor((t / 1000) % 60);
+	const minutes = t < 0 ? 0 : Math.floor((t / 1000 / 60) % 60);
+	const hours = t < 0 ? 0 : Math.floor((t / (1000 * 60 * 60)) % 24);
+	const days = t < 0 ? 0 : Math.floor(t / (1000 * 60 * 60 * 24));
+
+	return {
+		total: t,
+		days: days,
+		hours: hours,
+		minutes: minutes,
+		seconds: seconds,
+	};
 }
