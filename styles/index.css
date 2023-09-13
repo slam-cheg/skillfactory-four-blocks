@@ -610,13 +610,41 @@
 }
 
 .accord__content-description {
-  color: #181818;
+  color: #181818 !important;
   opacity: 0.7;
-  font-size: 16px;
+  font-size: 16px !important;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 !important;
   line-height: 130%;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.accord__content-description li {
+  display: flex;
+}
+.accord__content-description li::before {
+  content: "→";
+  margin-right: 20px;
+  color: #181818;
+  opacity: 0.7;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 120%;
+  position: relative;
+  top: -2px;
+}
+@media screen and (max-width: 639px) {
+  .accord__content-description li::before {
+    font-size: 18px;
+    line-height: 1;
+  }
+}
+@media screen and (max-width: 639px) {
+  .accord__content-description li::before {
+    top: 0;
+  }
 }
 @media screen and (max-width: 639px) {
   .accord__content-description {
@@ -912,18 +940,30 @@
   background-color: #fffaed;
   border-radius: 8px;
   padding: 30px 65px 30px 30px;
-  max-width: 800px;
+  max-width: 1160px;
+  max-height: 90vh;
+  overflow: auto;
+}
+@media screen and (max-width: 1199px) {
+  .popup-review__wrapper {
+    max-width: 940px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .popup-review__wrapper {
+    max-width: 620px;
+  }
 }
 @media screen and (max-width: 639px) {
   .popup-review__wrapper {
-    max-width: 420px;
+    max-width: 460px;
     padding: 30px 40px 30px 15px;
     border-radius: 4px;
   }
 }
 @media screen and (max-width: 479px) {
   .popup-review__wrapper {
-    max-width: 280px;
+    max-width: 300px;
   }
 }
 .popup-review__title {
@@ -948,6 +988,7 @@
   line-height: 120%;
   margin-bottom: 42px;
   opacity: 0.7;
+  display: block;
 }
 @media screen and (max-width: 639px) {
   .popup-review__subtitle {
@@ -955,7 +996,7 @@
     margin-bottom: 28px;
   }
 }
-.popup-review__text {
+.popup-review__description {
   color: #181818;
   font-size: 16px;
   font-style: normal;
@@ -963,9 +1004,15 @@
   line-height: 120%;
 }
 @media screen and (max-width: 639px) {
-  .popup-review__text {
+  .popup-review__description {
     font-size: 14px;
   }
+}
+.popup-review__description p {
+  margin-bottom: 10px;
+}
+.popup-review__description p:last-of-type {
+  margin-bottom: 0;
 }
 
 .learning {
@@ -1087,6 +1134,9 @@
   .learning__videos-wrapper {
     margin-bottom: 20px;
   }
+}
+.learning__videos-wrapper iframe {
+  height: 650px;
 }
 .learning .learning-button {
   width: 60px;
@@ -1359,6 +1409,7 @@
 }
 @media screen and (max-width: 959px) {
   .takeit__sale {
+    align-items: flex-start;
     flex-direction: column;
     gap: 14px;
   }

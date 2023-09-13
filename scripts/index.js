@@ -11,6 +11,7 @@ const reviewPopupName = reviewPopup.querySelector(".popup-review__title");
 const reviewPopupSubtitle = reviewPopup.querySelector(".popup-review__subtitle");
 const reviewPopupDescription = reviewPopup.querySelector(".popup-review__description");
 const reviewPopupCloseButton = reviewPopup.querySelector(".popup-review__close-ico");
+const learningVideosEl = document.querySelector(".learning__videos");
 const timerEndTime = document.querySelector(".timer");
 const timer = document.querySelector(".takeit-timer");
 const timerDaysValue = timer.querySelector(".takeit-timer__days-value");
@@ -58,7 +59,7 @@ iframeWrappers.forEach((wrapper) => {
 	wrapper.addEventListener("click", () => {
 		preview.insertAdjacentHTML("afterend", iframeLayout);
 		const iframe = wrapper.querySelector(".videos__iframe");
-		iframe.src = `https://www.youtube.com/embed/${currentVideoId}?&amp;autoplay=1&amp;rel=0`;
+		iframe.src = `https://storage.yandexcloud.net/sf-wallaper-bucket/video/${currentVideoId}.mp4`;
 		playBtn.classList.add("videos__play_hidden");
 		preview.classList.add("videos__preview_hidden");
 	});
@@ -66,12 +67,13 @@ iframeWrappers.forEach((wrapper) => {
 
 reviews.forEach((slide) => {
 	const nameText = slide.querySelector(".videos__name").textContent;
-	const descriptionText = slide.querySelector(".videos__description").textContent;
+	const descriptionText = slide.querySelector(".videos__review-text").querySelectorAll("p");
 	const reviewButton = slide.querySelector(".videos__popup-button");
 	const subtitleText = reviewButton.dataset.course;
+	const subtitleLink = reviewButton.dataset.link;
 
 	reviewButton.addEventListener("click", () => {
-		fullingPopup(nameText, subtitleText, descriptionText);
+		fullingPopup(nameText, subtitleText, descriptionText, subtitleLink);
 		openPopup(reviewPopup);
 	});
 });
@@ -139,6 +141,9 @@ function openPopup(currentPopup) {
 
 function closePopup(currentPopup) {
 	currentPopup.classList.remove("popup_opened");
+	if (currentPopup === reviewPopup) {
+		clearPopup();
+	}
 	window.removeEventListener("keydown", closeByEscape);
 }
 
@@ -157,14 +162,28 @@ function closeByEscape(event) {
 	}
 }
 
-function fullingPopup(name, subtitle, description) {
+function fullingPopup(name, subtitle, description, href) {
 	reviewPopupName.textContent = name;
 	reviewPopupSubtitle.textContent = subtitle;
-	reviewPopupDescription.textContent = description;
+	reviewPopupSubtitle.href = href;
+	description.forEach((p) => {
+		reviewPopupDescription.appendChild(p);
+	});
 }
 
+function clearPopup() {
+	reviewPopupName.textContent = "";
+	reviewPopupSubtitle.textContent = "";
+	reviewPopupSubtitle.href = "#";
+	reviewPopupDescription.childNodes.forEach((p) => {
+		p.remove();
+	});
+}
+
+let thumbsSlider, learningVideos;
+
 if (window.innerWidth < 960) {
-	const thumbsSlider = new Swiper(".learning__tabs", {
+	thumbsSlider = new Swiper(".learning__tabs", {
 		loop: false,
 		slidesPerView: 4,
 		slideToClickedSlide: true,
@@ -182,19 +201,24 @@ if (window.innerWidth < 960) {
 		},
 	});
 
-	const learningVideos = new Swiper(".learning__videos", {
+	learningVideos = new Swiper(".learning__videos", {
 		loop: false,
 		navigation: {
 			nextEl: ".learning-button-next",
 			prevEl: ".learning-button-prev",
 		},
 		slidesPerView: 1,
+		on: {
+			init: () => {
+				learningVideosEl.querySelector(".swiper-slide-active").querySelector("video").play();
+			},
+		},
 	});
 
 	learningVideos.controller.control = thumbsSlider;
 	thumbsSlider.controller.control = learningVideos;
 } else {
-	const thumbsSlider = new Swiper(".learning__tabs", {
+	thumbsSlider = new Swiper(".learning__tabs", {
 		loop: false,
 		slidesPerView: 4,
 		slideToClickedSlide: true,
@@ -212,7 +236,7 @@ if (window.innerWidth < 960) {
 		},
 	});
 
-	const learningVideos = new Swiper(".learning__videos", {
+	learningVideos = new Swiper(".learning__videos", {
 		loop: false,
 		navigation: {
 			nextEl: ".learning-button-next",
@@ -222,8 +246,25 @@ if (window.innerWidth < 960) {
 		thumbs: {
 			swiper: thumbsSlider,
 		},
+		on: {
+			init: () => {
+				learningVideosEl.querySelector(".swiper-slide-active").querySelector("video").play();
+			},
+		},
 	});
 }
+
+learningVideos.on("slideChangeTransitionEnd", () => {
+	const allSlides = learningVideosEl.querySelectorAll(".swiper-slide");
+	allSlides.forEach((slide) => {
+		const video = slide.querySelector("video");
+		if (slide.classList.contains("swiper-slide-active")) {
+			video.play();
+		} else {
+			video.pause();
+		}
+	});
+});
 
 setTimeout(() => {
 	endtime = timerEndTime.textContent;
