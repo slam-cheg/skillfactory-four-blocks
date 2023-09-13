@@ -184,7 +184,7 @@ let thumbsSlider, learningVideos;
 
 if (window.innerWidth < 960) {
 	thumbsSlider = new Swiper(".learning__tabs", {
-		loop: false,
+		loop: true,
 		slidesPerView: 4,
 		slideToClickedSlide: true,
 		navigation: {
@@ -202,7 +202,7 @@ if (window.innerWidth < 960) {
 	});
 
 	learningVideos = new Swiper(".learning__videos", {
-		loop: false,
+		loop: true,
 		navigation: {
 			nextEl: ".learning-button-next",
 			prevEl: ".learning-button-prev",
@@ -219,7 +219,7 @@ if (window.innerWidth < 960) {
 	thumbsSlider.controller.control = learningVideos;
 } else {
 	thumbsSlider = new Swiper(".learning__tabs", {
-		loop: false,
+		loop: true,
 		slidesPerView: 4,
 		slideToClickedSlide: true,
 		navigation: {
@@ -237,7 +237,7 @@ if (window.innerWidth < 960) {
 	});
 
 	learningVideos = new Swiper(".learning__videos", {
-		loop: false,
+		loop: true,
 		navigation: {
 			nextEl: ".learning-button-next",
 			prevEl: ".learning-button-prev",
