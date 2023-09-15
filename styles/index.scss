@@ -1911,6 +1911,10 @@
 		width: 100%;
 	}
 
+	@media screen and (max-width: 639px) {
+		padding: 40px 15px;
+	}
+
 	@media screen and (max-width: 479px) {
 		width: 280px;
 	}
@@ -1974,7 +1978,6 @@
 			position: relative;
 			@media screen and (max-width: 639px) {
 				display: flex;
-				width: min-content;
 			}
 
 			&::before {
@@ -2011,7 +2014,15 @@
 			border-radius: 4px;
 			background: #fff;
 
+			@media screen and (max-width: 959px) {
+				width: min-content;
+			}
+
 			@media screen and (max-width: 639px) {
+				width: auto;
+			}
+
+			@media screen and (max-width: 479px) {
 				width: min-content;
 			}
 		}
