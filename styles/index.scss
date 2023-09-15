@@ -1140,7 +1140,41 @@
 	.learning-button-prev {
 		left: -20px;
 	}
+	&__videos {
+		max-height: 550px;
 
+		@media screen and (max-width: 1199px) {
+			max-height: 450px;
+		}
+
+		@media screen and (max-width: 959px) {
+			max-height: 295px;
+		}
+		@media screen and (max-width: 639px) {
+			max-height: 220px;
+		}
+		@media screen and (max-width: 479px) {
+			max-height: 143px;
+		}
+
+		video {
+			transform: translateY(-50px);
+
+			@media screen and (max-width: 1199px) {
+				transform: translateY(-40px);
+			}
+
+			@media screen and (max-width: 959px) {
+				transform: translateY(-27px);
+			}
+			@media screen and (max-width: 639px) {
+				transform: translateY(-20px);
+			}
+			@media screen and (max-width: 479px) {
+				transform: translateY(-13px);
+			}
+		}
+	}
 	.learning-button-next {
 		right: -20px;
 	}
@@ -1519,7 +1553,7 @@
 
 		&-wrapper {
 			position: relative;
-			width: 360px;
+			width: 400px;
 			border-radius: 8px;
 			background: #fffaed;
 			margin: auto;
@@ -1559,12 +1593,10 @@
 
 		.h5-title {
 			font-size: 24px;
-			margin-bottom: 30px;
 			max-width: 80%;
 
 			@media screen and (max-width: 639px) {
 				font-size: 20px;
-				margin-bottom: 20px;
 				max-width: 100%;
 			}
 		}

@@ -1167,6 +1167,52 @@
 .learning .learning-button-prev {
   left: -20px;
 }
+.learning__videos {
+  max-height: 550px;
+}
+@media screen and (max-width: 1199px) {
+  .learning__videos {
+    max-height: 450px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .learning__videos {
+    max-height: 295px;
+  }
+}
+@media screen and (max-width: 639px) {
+  .learning__videos {
+    max-height: 220px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .learning__videos {
+    max-height: 143px;
+  }
+}
+.learning__videos video {
+  transform: translateY(-50px);
+}
+@media screen and (max-width: 1199px) {
+  .learning__videos video {
+    transform: translateY(-40px);
+  }
+}
+@media screen and (max-width: 959px) {
+  .learning__videos video {
+    transform: translateY(-27px);
+  }
+}
+@media screen and (max-width: 639px) {
+  .learning__videos video {
+    transform: translateY(-20px);
+  }
+}
+@media screen and (max-width: 479px) {
+  .learning__videos video {
+    transform: translateY(-13px);
+  }
+}
 .learning .learning-button-next {
   right: -20px;
 }
@@ -1547,7 +1593,7 @@
 }
 .takeit__popup-wrapper {
   position: relative;
-  width: 360px;
+  width: 400px;
   border-radius: 8px;
   background: #fffaed;
   margin: auto;
@@ -1586,13 +1632,11 @@
 }
 .takeit__popup .h5-title {
   font-size: 24px;
-  margin-bottom: 30px;
   max-width: 80%;
 }
 @media screen and (max-width: 639px) {
   .takeit__popup .h5-title {
     font-size: 20px;
-    margin-bottom: 20px;
     max-width: 100%;
   }
 }
