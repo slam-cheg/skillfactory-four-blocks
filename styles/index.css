@@ -937,7 +937,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.2s;
   cursor: pointer;
 }
 @media screen and (max-width: 639px) {
@@ -947,7 +946,7 @@
   }
 }
 .popup-review__close-ico:hover {
-  transition: 0.2s;
+  transition: 0.2s ease-in-out;
   background: rgba(4, 57, 51, 0.3);
 }
 .popup-review__wrapper {

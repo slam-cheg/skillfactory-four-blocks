@@ -142,7 +142,9 @@ function openPopup(currentPopup) {
 function closePopup(currentPopup) {
 	currentPopup.classList.remove("popup_opened");
 	if (currentPopup === reviewPopup) {
-		clearPopup();
+		setTimeout(() => {
+			clearPopup();
+		}, 100);
 	}
 	window.removeEventListener("keydown", closeByEscape);
 }
@@ -172,10 +174,11 @@ function fullingPopup(name, subtitle, description, href) {
 }
 
 function clearPopup() {
+	const popupText = reviewPopupDescription.querySelectorAll("p");
 	reviewPopupName.textContent = "";
 	reviewPopupSubtitle.textContent = "";
 	reviewPopupSubtitle.href = "#";
-	reviewPopupDescription.childNodes.forEach((p) => {
+	popupText.forEach((p) => {
 		p.remove();
 	});
 }
