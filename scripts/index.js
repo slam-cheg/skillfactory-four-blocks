@@ -1,7 +1,7 @@
 const outerAccords = document.querySelectorAll(".accord-outer");
 const programAccord = document.querySelector(".program__accord-wrapper");
 const programAccordItems = programAccord.querySelectorAll(".accord-inner__element");
-const iframeLayout = `<iframe class="videos__iframe" width="100%" height="100%" frameborder="0" allowfullscreen="" src="" allow="autoplay"></iframe>`;
+const iframeLayout = `<video class="videos__iframe" src="" autoplay muted loop width="100%" frameborder="0" playsinline controls></video>`;
 const iframeWrappers = document.querySelectorAll(".videos__iframe-wrapper");
 const reviewsContainer = document.querySelector(".videos__swiper");
 const reviews = reviewsContainer.querySelectorAll(".swiper-slide");
