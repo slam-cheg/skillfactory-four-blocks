@@ -1,7 +1,7 @@
 const outerAccords = document.querySelectorAll(".accord-outer");
 const programAccord = document.querySelector(".program__accord-wrapper");
 const programAccordItems = programAccord.querySelectorAll(".accord-inner__element");
-const iframeLayout = `<video class="videos__iframe" src="" autoplay muted loop width="100%" frameborder="0" playsinline controls></video>`;
+const iframeLayout = `<video class="videos__iframe" src="" width="100%" frameborder="0" poster="" autoplay muted loop playsinline controls></video>`;
 const iframeWrappers = document.querySelectorAll(".videos__iframe-wrapper");
 const reviewsContainer = document.querySelector(".videos__swiper");
 const reviews = reviewsContainer.querySelectorAll(".swiper-slide");
@@ -58,8 +58,10 @@ iframeWrappers.forEach((wrapper) => {
 
 	wrapper.addEventListener("click", () => {
 		preview.insertAdjacentHTML("afterend", iframeLayout);
+		const poster = wrapper.querySelector(".videos__preview").src;
 		const iframe = wrapper.querySelector(".videos__iframe");
 		iframe.src = `https://storage.yandexcloud.net/sf-wallaper-bucket/video/${currentVideoId}.mp4`;
+		iframe.poster = poster;
 		playBtn.classList.add("videos__play_hidden");
 		preview.classList.add("videos__preview_hidden");
 	});
@@ -91,6 +93,8 @@ ratesPopupLinks.forEach((link) => {
 		});
 	});
 });
+
+function addVideo(){}
 
 function handlerAccordToggle(accord) {
 	accord.classList.toggle("accord-opened");
