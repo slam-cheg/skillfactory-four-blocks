@@ -1,5 +1,3 @@
-debugger
-
 const outerAccords = document.querySelectorAll(".accord-outer");
 const programAccord = document.querySelector(".program__accord-wrapper");
 const programAccordItems = programAccord.querySelectorAll(".accord-inner__element");
@@ -14,7 +12,7 @@ const reviewPopupSubtitle = reviewPopup.querySelector(".popup-review__subtitle")
 const reviewPopupDescription = reviewPopup.querySelector(".popup-review__description");
 const reviewPopupCloseButton = reviewPopup.querySelector(".popup-review__close-ico");
 const learningVideosEl = document.querySelector(".learning__videos");
-const timerEndTime = document.querySelector(".timer");
+const timerEndTime = document.querySelector(".takeit__timerEndTime");
 const timer = document.querySelector(".takeit-timer");
 const timerDaysValue = timer.querySelector(".takeit-timer__days-value");
 const timerHoursValue = timer.querySelector(".takeit-timer__hours-value");
