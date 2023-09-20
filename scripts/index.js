@@ -18,7 +18,7 @@ const timerDaysValue = timer.querySelector(".takeit-timer__days-value");
 const timerHoursValue = timer.querySelector(".takeit-timer__hours-value");
 const timerMinutesValue = timer.querySelector(".takeit-timer__minutes-value");
 const timerSecondsValue = timer.querySelector(".takeit-timer__seconds-value");
-let endtime = 0;
+let endDate = 0;
 const ratesPopupLinks = document.querySelectorAll(".rate-card__list-item_underline");
 const ratesPopups = document.querySelectorAll(".takeit__popup");
 
@@ -274,11 +274,11 @@ learningVideos.on("slideChangeTransitionEnd", () => {
 });
 
 setTimeout(() => {
-	endtime = timerEndTime.textContent;
+	endDate = timerEndTime.textContent;
 }, 500);
 
-function updateClock() {
-	var t = getTimeRemaining(endtime);
+function updateTimerClock() {
+	var t = getRemainingTime(endDate);
 
 	if (t.days < 10) {
 		t.days = ("0" + t.days).slice(-2);
@@ -294,10 +294,10 @@ function updateClock() {
 	timerMinutesValue.textContent = t.minutes;
 	timerSecondsValue.textContent = t.seconds;
 }
-updateClock();
-var timerinterval = setInterval(updateClock, 1000);
+updateTimerClock();
+var timerinterval = setInterval(updateTimerClock, 1000);
 
-function getTimeRemaining(endtime) {
+function getRemainingTime(endtime) {
 	const t = Date.parse(endtime) - Date.parse(new Date());
 	const seconds = t < 0 ? 0 : Math.floor((t / 1000) % 60);
 	const minutes = t < 0 ? 0 : Math.floor((t / 1000 / 60) % 60);
