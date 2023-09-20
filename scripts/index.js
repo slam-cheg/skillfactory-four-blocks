@@ -1,3 +1,5 @@
+debugger
+
 const outerAccords = document.querySelectorAll(".accord-outer");
 const programAccord = document.querySelector(".program__accord-wrapper");
 const programAccordItems = programAccord.querySelectorAll(".accord-inner__element");
