@@ -20,6 +20,9 @@
 #allrecords a {
   color: inherit;
 }
+#allrecords ul {
+  padding-left: 0 !important;
+}
 
 * {
   padding: 0;
@@ -1633,7 +1636,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.2s;
+  transition: background 0.2s;
   cursor: pointer;
 }
 @media screen and (max-width: 639px) {
@@ -1643,7 +1646,7 @@
   }
 }
 .takeit__popup-close:hover {
-  transition: 0.2s;
+  transition: background 0.2s;
   background: rgba(4, 57, 51, 0.3);
 }
 .takeit__popup .h5-title {
@@ -2069,4 +2072,4 @@
     width: -moz-min-content;
     width: min-content;
   }
-}
+}/*# sourceMappingURL=index.css.map */
