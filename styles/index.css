@@ -1449,6 +1449,7 @@
 
 .takeit {
   margin-bottom: 100px;
+  overflow: hidden;
 }
 .takeit .h2-title {
   margin-bottom: 60px;
@@ -1504,7 +1505,6 @@
 .takeit__rates {
   margin-bottom: 20px;
   position: relative;
-  overflow: hidden;
 }
 .takeit__rates .pagination__buttons {
   position: relative;

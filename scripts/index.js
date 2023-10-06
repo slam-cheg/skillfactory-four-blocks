@@ -319,10 +319,10 @@ const ratesSlider = new Swiper(".takeit__slider", {
 		nextEl: "#rates-prev-btn",
 		prevEl: "#rates-next-btn",
 	},
-	spaceBetween: 10,
+	spaceBetween: 25,
 	breakpoints: {
 		320: {
-			slidesPerView: 1.07,
+			slidesPerView: 1,
 		},
 		960: {
 			slidesPerView: 2,
