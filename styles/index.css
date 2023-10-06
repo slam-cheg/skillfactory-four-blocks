@@ -1506,20 +1506,15 @@
   overflow: hidden;
 }
 .takeit__rates .pagination__buttons {
+  position: relative;
   display: none;
-  top: 20px;
-  right: 15px;
   left: unset;
+  top: unset;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 1199px) {
   .takeit__rates .pagination__buttons {
-    top: 30px;
     display: flex;
-  }
-}
-@media screen and (max-width: 639px) {
-  .takeit__rates .pagination__buttons {
-    top: 20px;
   }
 }
 .takeit__rates .pagination__button {
@@ -2072,4 +2067,4 @@
     width: -moz-min-content;
     width: min-content;
   }
-}/*# sourceMappingURL=index.css.map */
+}

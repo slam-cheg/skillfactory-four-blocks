@@ -1473,18 +1473,17 @@
     overflow: hidden;
 
     .pagination__buttons {
+      position: relative;
       display: none;
-      top: 20px;
-      right: 15px;
       left: unset;
+      top: unset;
+      margin-bottom: 20px;
 
       @media screen and (max-width: 1199px) {
-        top: 30px;
         display: flex;
       }
 
       @media screen and (max-width: 639px) {
-        top: 20px;
       }
     }
 
