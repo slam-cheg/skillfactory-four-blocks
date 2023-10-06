@@ -314,15 +314,15 @@ function getRemainingTime(endtime) {
 }
 
 const ratesSlider = new Swiper(".takeit__slider", {
-	loop: true,
+	loop: false,
 	navigation: {
 		nextEl: "#rates-prev-btn",
 		prevEl: "#rates-next-btn",
 	},
-	spaceBetween: 25,
+	spaceBetween: 10,
 	breakpoints: {
 		320: {
-			slidesPerView: 1,
+			slidesPerView: 1.07,
 		},
 		960: {
 			slidesPerView: 2,
