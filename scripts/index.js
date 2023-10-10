@@ -273,8 +273,7 @@ learningVideos.on("slideChangeTransitionEnd", () => {
 });
 
 setTimeout(() => {
-	const timerEndTime = window.SFData['https://skillfactory.ru/python-fullstack-web-developer-b/']['75'];
-	endDate = timerEndTime.textContent;
+	endDate = window.SFData['https://skillfactory.ru/python-fullstack-web-developer-b/']['75'];
 }, 500);
 
 function updateTimerClock() {
